@@ -1,30 +1,44 @@
 package com.selfimpr.android;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
+
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ExecutorService service;
+    private TextView content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        content = findViewById(R.id.content);
+
     }
 
-
-    //可重入锁测试
-    public synchronized void test1() {
-        test2();
-        Log.e("test", "test1");
+    public void startAsyncTask(View view) {
+        if (service == null || service.isShutdown()) {
+            service = Executors.newFixedThreadPool(3);
+            content.setText("创建线程池");
+        }
+        for (int i = 0; i < 15; i++) {
+            service.execute(new AsyncTaskRunnable("clickImageView:" + i));
+        }
     }
 
-    private synchronized void test2() {
-        Log.e("test", "test2");
+    public void shutdownAsyncTask(View view) {
+        service.shutdown();
+        content.setText("shutdown:" + service.isShutdown() + "," + service.isTerminated());
     }
 
-    public void clickImageView(View view) {
-        test1();
+    public void shutdownNowAsyncTask(View view) {
+        List<Runnable> runnables = service.shutdownNow();
+        content.setText("shutdownNow:" + service.isShutdown() + "," + service.isTerminated() + ".runnables" + runnables.size());
     }
 }
