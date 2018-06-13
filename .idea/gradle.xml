@@ -8,9 +8,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/CommonLibrary" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/lifecyledemo" />
             <option value="$PROJECT_DIR$/volley" />
+            <option value="$PROJECT_DIR$/volleydemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

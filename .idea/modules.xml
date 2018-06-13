@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CommonLibrary/CommonLibrary.iml" filepath="$PROJECT_DIR$/CommonLibrary/CommonLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lifecyledemo/lifecyledemo.iml" filepath="$PROJECT_DIR$/lifecyledemo/lifecyledemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/lifecyledemo/lifecyledemo.iml" filepath="$PROJECT_DIR$/lifecyledemo/lifecyledemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/selfimpr_android.iml" filepath="$PROJECT_DIR$/selfimpr_android.iml" />
       <module fileurl="file://$PROJECT_DIR$/volley/volley.iml" filepath="$PROJECT_DIR$/volley/volley.iml" />
+      <module fileurl="file://$PROJECT_DIR$/volleydemo/volleydemo.iml" filepath="$PROJECT_DIR$/volleydemo/volleydemo.iml" />
     </modules>
   </component>
 </project>
