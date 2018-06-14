@@ -1,1 +1,1 @@
-include ':app', ':lifecyledemo', ':volley', ':volleydemo', ':CommonLibrary'
+include ':app', ':lifecyledemo', ':volley', ':volleydemo', ':CommonLibrary', ':edittextdemo'
