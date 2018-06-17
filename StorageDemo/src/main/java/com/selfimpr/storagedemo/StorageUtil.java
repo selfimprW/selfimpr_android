@@ -3,10 +3,12 @@ package com.selfimpr.storagedemo;
 import android.content.Context;
 import android.text.TextUtils;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
@@ -73,12 +75,13 @@ public class StorageUtil {
     public static Object readObject(Context context, String fileName) {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
+        Object object = null;
         try {
             File streamFile = context.getFileStreamPath(fileName);
             if (streamFile != null && streamFile.exists() && streamFile.isFile() && streamFile.length() > 0) {
                 fis = context.openFileInput(fileName);
                 ois = new ObjectInputStream(fis);
-                return ois.readObject();
+                object = ois.readObject();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -98,7 +101,7 @@ public class StorageUtil {
                 }
             }
         }
-        return null;
+        return object;
     }
 
     public static boolean writeString(File file, String content) {
@@ -110,7 +113,6 @@ public class StorageUtil {
         try {
             outStream = new FileOutputStream(file);
             outStream.write(content.getBytes());
-            outStream.close();
         } catch (Exception e) {
             e.printStackTrace();
             status = false;
@@ -148,5 +150,39 @@ public class StorageUtil {
             }
         }
         return sb.toString();
+    }
+
+
+    private String readAssectText(Context context) {
+        InputStream inputStream = null;
+        ByteArrayOutputStream outputStream = null;
+        try {
+            inputStream = context.getAssets().open("readme.txt");
+            outputStream = new ByteArrayOutputStream();
+            byte buf[] = new byte[1024];
+            int len;
+            while ((len = inputStream.read(buf)) != -1) {
+                outputStream.write(buf, 0, len);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (outputStream != null) {
+                try {
+                    outputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return outputStream == null ? "" : outputStream.toString();
+
     }
 }
