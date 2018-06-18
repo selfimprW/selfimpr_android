@@ -25,17 +25,9 @@ public class WidgetAppProvider extends AppWidgetProvider {
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
-        long tarage = SPUtils.getLong(context, SPUtils.SHARED_TARGET_DATA);
-        long dx = 0;
-
-        if (tarage == -1){
-        }else{
-            Calendar c = Calendar.getInstance();
-            dx = (tarage - c.getTimeInMillis())/1000/3600/24 + 1;
-        }
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.appwidget_provider_layout);
-        views.setTextViewText(R.id.appwidget_text, "倒计时\r\n" + dx + "天");
+        views.setTextViewText(R.id.appwidget_text, "王佳成");
         Intent skipIntent = new Intent(context, MainActivity.class);
         PendingIntent pi = PendingIntent.getActivity(context, 200, skipIntent, PendingIntent.FLAG_CANCEL_CURRENT);
         views.setOnClickPendingIntent(R.id.appwidget_text, pi);
