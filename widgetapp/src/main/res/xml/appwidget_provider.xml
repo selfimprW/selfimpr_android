@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!--接下来我们需要准备一个AppWidgetProviderInfo类，上面知道这个类是在res/xml下面新建一个xml文件来自动生成的--><!--属性：
+android:previewImage：指定appwidget在预览界面显示的图片，也就是我们选择appwidget的时候显示的界面，如果不设置改属性系统就会给app的icon图标作为预览。-->
+    <!--android:updatePeriodMillis：自动更新的时间，最少为半个小时。-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialKeyguardLayout="@layout/appwidget_provider_layout"
+    android:initialLayout="@layout/appwidget_provider_layout"
+    android:minHeight="40dp"
+    android:minWidth="110dp"
+    android:previewImage="@mipmap/ic_launcher"
+    android:resizeMode="horizontal"
+    android:updatePeriodMillis="86400000"
+    android:widgetCategory="home_screen|keyguard|searchbox" />

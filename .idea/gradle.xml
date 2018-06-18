@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/okhttpdemo" />
             <option value="$PROJECT_DIR$/volley" />
             <option value="$PROJECT_DIR$/volleydemo" />
+            <option value="$PROJECT_DIR$/widgetapp" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

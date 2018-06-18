@@ -1,0 +1,10 @@
+如果我们只是使用像textview这种没有子布局的控件那么使用方式是非常简单的，这里会涉及到：AppWidgetProvider、AppWidgetProviderInfo这两个类。
+而如果涉及到像listview、gridview这种，还会涉及到RemoteViewsService和RemoteViewsFactory。
+
+AppWidgetProvider：该类继承自broadcastreceiver，需要在清单文件中注册<receiver>标签。
+
+AppWidgetProviderInfo：该类只需写xml文件就可以了，xml放在res/xml下面，跟标签为<appwidget-provider>.
+
+RemoteViewsService:该类继承自service,需要在清单文件中注册。
+
+RemoteViewsFactory:该类为RemoteViewsService的内部类，处理service中的工作。
