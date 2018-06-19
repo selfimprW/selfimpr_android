@@ -10,3 +10,14 @@ android:previewImage：指定appwidget在预览界面显示的图片，也就是
     android:resizeMode="horizontal"
     android:updatePeriodMillis="86400000"
     android:widgetCategory="home_screen|keyguard|searchbox" />
+
+    <!--知乎-->
+    <!--<appwidget-provider-->
+    <!--minWidth='320.0dp'-->
+    <!--minHeight='48.0dp'-->
+    <!--updatePeriodMillis='21600000'-->
+    <!--initialLayout='@res/0x7F0B019B'-->
+    <!--previewImage='@res/0x7F08074D'-->
+    <!--resizeMode='0x00000002'-->
+    <!--widgetCategory='0x00000001'>-->
+    <!--</appwidget-provider>-->
