@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/lifecyledemo/lifecyledemo.iml" filepath="$PROJECT_DIR$/lifecyledemo/lifecyledemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/okhttpdemo/okhttpdemo.iml" filepath="$PROJECT_DIR$/okhttpdemo/okhttpdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/selfimpr_android.iml" filepath="$PROJECT_DIR$/selfimpr_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servicedemo/servicedemo.iml" filepath="$PROJECT_DIR$/servicedemo/servicedemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/volley/volley.iml" filepath="$PROJECT_DIR$/volley/volley.iml" />
       <module fileurl="file://$PROJECT_DIR$/volleydemo/volleydemo.iml" filepath="$PROJECT_DIR$/volleydemo/volleydemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/widgetapp/widgetapp.iml" filepath="$PROJECT_DIR$/widgetapp/widgetapp.iml" />
