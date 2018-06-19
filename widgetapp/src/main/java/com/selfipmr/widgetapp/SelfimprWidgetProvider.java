@@ -19,8 +19,7 @@ import java.util.Calendar;
  * Modifier：  <br/>
  * Modify time：  <br/>
  */
-public class WidgetAppProvider extends AppWidgetProvider {
-
+public class SelfimprWidgetProvider extends AppWidgetProvider {
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {

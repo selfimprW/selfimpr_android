@@ -18,7 +18,7 @@
         </activity>
 
         <!--这里的<meta-data>是必须要写的，名字是固定的，resource就是我们创建的上面的那个xml文件的位置。其中-->
-        <receiver android:name=".WidgetAppProvider">
+        <receiver android:name=".SelfimprWidgetProvider">
             <intent-filter>
                 <!--这个是必须要写的一个action，用来接收appwidget更新的广播，后两个为我自己写的广播。下面我们来看看AppwidgetProvider中的代码：-->
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

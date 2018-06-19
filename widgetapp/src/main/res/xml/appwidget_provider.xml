@@ -2,22 +2,10 @@
 android:previewImage：指定appwidget在预览界面显示的图片，也就是我们选择appwidget的时候显示的界面，如果不设置改属性系统就会给app的icon图标作为预览。-->
     <!--android:updatePeriodMillis：自动更新的时间，最少为半个小时。-->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:initialKeyguardLayout="@layout/appwidget_provider_layout"
     android:initialLayout="@layout/appwidget_provider_layout"
-    android:minHeight="40dp"
-    android:minWidth="110dp"
+    android:minHeight="50dp"
+    android:minWidth="320dp"
     android:previewImage="@mipmap/ic_launcher"
     android:resizeMode="horizontal"
-    android:updatePeriodMillis="86400000"
+    android:updatePeriodMillis="21600000"
     android:widgetCategory="home_screen|keyguard|searchbox" />
-
-    <!--知乎-->
-    <!--<appwidget-provider-->
-    <!--minWidth='320.0dp'-->
-    <!--minHeight='48.0dp'-->
-    <!--updatePeriodMillis='21600000'-->
-    <!--initialLayout='@res/0x7F0B019B'-->
-    <!--previewImage='@res/0x7F08074D'-->
-    <!--resizeMode='0x00000002'-->
-    <!--widgetCategory='0x00000001'>-->
-    <!--</appwidget-provider>-->
