@@ -27,4 +27,9 @@
         android:hint="SimpleEditTextV1：禁止复制粘贴，不可插入"
         android:inputType="numberDecimal" />
 
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="EditText" />
 </LinearLayout>
