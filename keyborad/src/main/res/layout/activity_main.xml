@@ -7,11 +7,24 @@
     android:padding="15dp"
     tools:context="com.selfimpr.keyborad.MainActivity">
 
-    <com.selfimpr.keyborad.CustomEditText
-        android:id="@+id/custom"
+
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@color/colorPrimary"
-        android:textColor="@android:color/white" />
+        android:layout_height="50dp"
+        android:hint="EditText" />
+
+    <com.selfimpr.keyborad.SimpleEditText
+        android:id="@+id/simple_edit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="SimpleEditText:禁止复制粘贴，可插入"
+        android:inputType="numberDecimal" />
+
+    <com.selfimpr.keyborad.SimpleEditTextV1
+        android:id="@+id/simple_edit_v1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="SimpleEditTextV1：禁止复制粘贴，不可插入"
+        android:inputType="numberDecimal" />
 
 </LinearLayout>
