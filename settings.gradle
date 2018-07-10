@@ -1,1 +1,1 @@
-include ':app', ':lifecyledemo', ':volleydemo', ':CommonLibrary', ':edittextdemo', ':StorageDemo', ':okhttpdemo', ':widgetapp', ':annotationdemo', ':servicedemo', ':volley', ':keyborad'
+include ':app', ':lifecyledemo', ':volleydemo', ':CommonLibrary', ':edittextdemo', ':StorageDemo', ':okhttpdemo', ':widgetapp', ':annotationdemo', ':servicedemo', ':volley', ':keyborad', ':broadcastreceiver'

@@ -41,3 +41,7 @@ ps 数值类型
 - android:inputType="datetime"//日期+时间格式
 - android:inputType="date"//日期键盘
 - android:inputType="time"//时间键盘
+
+
+
+学习能力，职业规划，思路，学校，冲进，前工作背景
