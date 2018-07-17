@@ -2,6 +2,7 @@ package com.selfimpr.android;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -19,6 +20,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         content = findViewById(R.id.content);
+
+        ModuleStaticConfig.getInstance().put("runnable",new AsyncTaskRunnable("w"));
+        ModuleStaticConfig.getInstance().put("wjc","wjc");
+
+        Log.e("wjc",ModuleStaticConfig.getInstance().get("wjc").toString());
+
 
     }
 
