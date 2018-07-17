@@ -3,8 +3,11 @@ package com.selfimpr.android;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.util.SparseArray;
 import android.view.View;
 import android.widget.TextView;
+
+import com.selfimpr.StringUtil;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -21,12 +24,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         content = findViewById(R.id.content);
 
-        ModuleStaticConfig.getInstance().put("runnable",new AsyncTaskRunnable("w"));
-        ModuleStaticConfig.getInstance().put("wjc","wjc");
+        ModuleStaticConfig.getInstance().put("runnable", new AsyncTaskRunnable("w"));
+        ModuleStaticConfig.getInstance().put("wjc", "wjc");
 
-        Log.e("wjc",ModuleStaticConfig.getInstance().get("wjc").toString());
+        Log.e("wjc", ModuleStaticConfig.getInstance().get("wjc").toString());
 
+        testSparseArray();
 
+        List<String> array = StringUtil.split("入手渠道|转手原因|规格尺寸|新旧程度|使用感受", "\\|");
+    }
+
+    private void testSparseArray() {
+        SparseArray<String> array = new SparseArray<>();
+        for (int i = 0; i < 10; i++) {
+            array.put(i, i + ":value");
+//            array.append();
+        }
+        Log.e("wjc", array.toString());
     }
 
     public void startAsyncTask(View view) {
