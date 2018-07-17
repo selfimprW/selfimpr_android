@@ -1,1 +1,2 @@
-include ':app', ':lifecyledemo', ':volleydemo', ':CommonLibrary', ':edittextdemo', ':StorageDemo', ':okhttpdemo', ':widgetapp', ':annotationdemo', ':servicedemo', ':volley', ':keyborad', ':broadcastreceiver'
+include ':app', ':lifecyledemo', ':volleydemo', ':CommonLibrary', ':edittextdemo', ':StorageDemo', ':okhttpdemo', ':widgetapp', ':annotationdemo', ':servicedemo', ':volley', ':keyborad',':rxjavademo', ':broadcastreceiver'
+
