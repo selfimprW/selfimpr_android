@@ -30,7 +30,7 @@ import java.util.concurrent.ConcurrentSkipListSet;
 /**
  * https://blog.csdn.net/wangzhongshun/article/details/78286031
  * https://blog.csdn.net/ztchun/article/details/52017290
- *
+ * <p>
  * http://www.cnblogs.com/fuck1/p/5322302.html
  * https://blog.csdn.net/whb20081815/article/details/70291412
  */
@@ -45,25 +45,24 @@ public class MainActivity extends AppCompatActivity {
     //todo java中
     private List<String> list;
     private ArrayList<String> arrayList;
+    private LinkedList<String> linkedList;
     private Map<String, String> map;
     private HashMap<String, String> hashMap;
-    private HashSet<String> hashSet;
-    private Set<String> set;
     private ArrayMap<String, String> arrayMap;
-
-    private LinkedHashMap<String, String> linkedHashMap;
-    private LinkedHashSet<String> linkedHashSet;
-    private LinkedList<String> linkedList;
     private ConcurrentHashMap<String, String> concurrentHashMap;
-    private ConcurrentSkipListMap<String, String> concurrentSkipListMap;
-    private ConcurrentSkipListSet<String> concurrentSkipListSet;
-    private ConcurrentMap<String, String> concurrentMap;
-    private ConcurrentNavigableMap<String, String> concurrentNavigableMap;
+    private LinkedHashMap<String, String> linkedHashMap;
+    private Hashtable<String, String> hashtable;
+    private Set<String> set;
+    private HashSet<String> hashSet;
     private Vector vector;
     private Stack stack;
     private TreeMap<String, String> treeMap;
     private TreeSet<String> treeSet;
-    private Hashtable<String, String> hashtable;
+
+    private ConcurrentSkipListMap<String, String> concurrentSkipListMap;
+    private ConcurrentSkipListSet<String> concurrentSkipListSet;
+    private ConcurrentMap<String, String> concurrentMap;
+    private ConcurrentNavigableMap<String, String> concurrentNavigableMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
