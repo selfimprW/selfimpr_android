@@ -3,7 +3,7 @@ package com.selfimpr.android;
 import android.util.Log;
 
 /**
- * description：   <br/>
+ * description：https://blog.csdn.net/wwwsssaaaddd/article/details/24213525   <br/>
  * ===============================<br/>
  * creator：Jiacheng<br/>
  * create time：2018/7/18 下午5:30<br/>
