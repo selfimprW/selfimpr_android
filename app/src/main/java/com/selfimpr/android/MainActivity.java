@@ -9,11 +9,13 @@ import android.widget.TextView;
 
 import com.selfimpr.StringUtil;
 
+import java.lang.ref.PhantomReference;
+import java.lang.ref.ReferenceQueue;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity {
 
     private ExecutorService service;
     private TextView content;
@@ -32,7 +34,18 @@ public class MainActivity extends AppCompatActivity  {
         testSparseArray();
 
         List<String> array = StringUtil.split("入手渠道|转手原因|规格尺寸|新旧程度|使用感受", "\\|");
+
+//        testPhantomReference();
     }
+
+//    private void testPhantomReference() {
+//        ModuleStaticConfig config = new ModuleStaticConfig();
+//        ReferenceQueue<ModuleStaticConfig> queue = new ReferenceQueue<>();
+//        PhantomReference<ModuleStaticConfig> phantomReference = new PhantomReference<>(config, queue);
+//        Log.e("reference", queue.poll() + "111");
+//        System.gc();
+//        Log.e("reference", queue.poll() + "222");
+//    }
 
     private void testSparseArray() {
         SparseArray<String> array = new SparseArray<>();
