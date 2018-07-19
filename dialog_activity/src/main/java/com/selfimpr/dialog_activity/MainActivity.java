@@ -1,6 +1,7 @@
-xpackage com.selfimpr.dialog_activity;
+package com.selfimpr.dialog_activity;
 
 import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
