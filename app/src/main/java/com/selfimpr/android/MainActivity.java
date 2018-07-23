@@ -1,5 +1,6 @@
 package com.selfimpr.android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -34,18 +35,9 @@ public class MainActivity extends AppCompatActivity {
         testSparseArray();
 
         List<String> array = StringUtil.split("入手渠道|转手原因|规格尺寸|新旧程度|使用感受", "\\|");
+        Log.e("wjc", String.valueOf(array));
 
-//        testPhantomReference();
     }
-
-//    private void testPhantomReference() {
-//        ModuleStaticConfig config = new ModuleStaticConfig();
-//        ReferenceQueue<ModuleStaticConfig> queue = new ReferenceQueue<>();
-//        PhantomReference<ModuleStaticConfig> phantomReference = new PhantomReference<>(config, queue);
-//        Log.e("reference", queue.poll() + "111");
-//        System.gc();
-//        Log.e("reference", queue.poll() + "222");
-//    }
 
     private void testSparseArray() {
         SparseArray<String> array = new SparseArray<>();
@@ -74,5 +66,11 @@ public class MainActivity extends AppCompatActivity {
     public void shutdownNowAsyncTask(View view) {
         List<Runnable> runnables = service.shutdownNow();
         content.setText("shutdownNow:" + service.isShutdown() + "," + service.isTerminated() + ".runnables" + runnables.size());
+    }
+
+    public void launchByIntentFilter(View view) {
+        Intent intent = new Intent();
+        intent.setAction("wangjiacheng");
+        startActivity(intent);
     }
 }
