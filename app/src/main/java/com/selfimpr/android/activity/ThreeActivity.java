@@ -15,12 +15,13 @@ import android.widget.TextView;
  * Modifier：  <br/>
  * Modify time：  <br/>
  */
-public class SecondActivity extends FragmentActivity {
+public class ThreeActivity extends FragmentActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TextView textView = new TextView(this);
-        textView.setText("SecondActivity:" + (getIntent() == null ? "" : getIntent().getAction()));
+        textView.setText("ThreeActivity:" + (getIntent() == null ? "" : getIntent().getAction()));
         setContentView(textView);
+
     }
 }

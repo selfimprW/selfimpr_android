@@ -68,9 +68,14 @@ public class MainActivity extends AppCompatActivity {
         content.setText("shutdownNow:" + service.isShutdown() + "," + service.isTerminated() + ".runnables" + runnables.size());
     }
 
+    /**
+     * 任何一个需要隐式启动的Activity都必须要有这项:<category android:name="android.intent.category.DEFAULT"/>
+     */
     public void launchByIntentFilter(View view) {
         Intent intent = new Intent();
         intent.setAction("wangjiacheng");
+        //不加下面这行也行，因为intent的这个属性默认值即系Intent.CATEGORY_DEFAULT
+        intent.addCategory(Intent.CATEGORY_DEFAULT);
         startActivity(intent);
     }
 }

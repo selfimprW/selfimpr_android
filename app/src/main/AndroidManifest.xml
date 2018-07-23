@@ -20,6 +20,15 @@
         <activity android:name=".activity.SecondActivity">
             <intent-filter>
                 <action android:name="wangjiacheng" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.ThreeActivity">
+            <intent-filter>
+                <action android:name="wangjiacheng" />
+                <action android:name="wangjiacheng1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>
