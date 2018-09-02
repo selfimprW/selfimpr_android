@@ -1,2 +1,2 @@
-include ':app', ':lifecyledemo', ':volleydemo', ':CommonLibrary', ':edittextdemo', ':StorageDemo', ':okhttpdemo', ':widgetapp', ':annotationdemo', ':servicedemo', ':volley', ':keyborad',':rxjavademo', ':broadcastreceiver', ':modulecollections', ':dialog_activity', ':permissiondemo', ':verticalviewpager'
+include ':app', ':lifecyledemo', ':volleydemo', ':CommonLibrary', ':edittextdemo', ':StorageDemo', ':okhttpdemo', ':widgetapp', ':annotationdemo', ':servicedemo', ':keyborad', ':rxjavademo', ':broadcastreceiver', ':modulecollections', ':dialog_activity', ':permissiondemo', ':verticalviewpager', ':volley'
 
