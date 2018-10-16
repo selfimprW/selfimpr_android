@@ -4,9 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CommonLibrary/CommonLibrary.iml" filepath="$PROJECT_DIR$/CommonLibrary/CommonLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/StorageDemo/StorageDemo.iml" filepath="$PROJECT_DIR$/StorageDemo/StorageDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/StorageDemo/StorageDemo.iml" filepath="$PROJECT_DIR$/StorageDemo/StorageDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/annotationdemo/annotationdemo.iml" filepath="$PROJECT_DIR$/annotationdemo/annotationdemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/broadcastreceiver/broadcastreceiver.iml" filepath="$PROJECT_DIR$/broadcastreceiver/broadcastreceiver.iml" />
       <module fileurl="file://$PROJECT_DIR$/dialog_activity/dialog_activity.iml" filepath="$PROJECT_DIR$/dialog_activity/dialog_activity.iml" />
@@ -14,19 +12,14 @@
       <module fileurl="file://$PROJECT_DIR$/keyborad/keyborad.iml" filepath="$PROJECT_DIR$/keyborad/keyborad.iml" />
       <module fileurl="file://$PROJECT_DIR$/lifecyledemo/lifecyledemo.iml" filepath="$PROJECT_DIR$/lifecyledemo/lifecyledemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/modulecollections/modulecollections.iml" filepath="$PROJECT_DIR$/modulecollections/modulecollections.iml" />
-      <module fileurl="file://$PROJECT_DIR$/modulecollections/modulecollections.iml" filepath="$PROJECT_DIR$/modulecollections/modulecollections.iml" />
       <module fileurl="file://$PROJECT_DIR$/okhttpdemo/okhttpdemo.iml" filepath="$PROJECT_DIR$/okhttpdemo/okhttpdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/permissiondemo/permissiondemo.iml" filepath="$PROJECT_DIR$/permissiondemo/permissiondemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxjavademo/rxjavademo.iml" filepath="$PROJECT_DIR$/rxjavademo/rxjavademo.iml" />
       <module fileurl="file://$PROJECT_DIR$/selfimpr_android.iml" filepath="$PROJECT_DIR$/selfimpr_android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/selfimpr_android.iml" filepath="$PROJECT_DIR$/selfimpr_android.iml" />
       <module fileurl="file://$PROJECT_DIR$/servicedemo/servicedemo.iml" filepath="$PROJECT_DIR$/servicedemo/servicedemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/verticalviewpager/verticalviewpager.iml" filepath="$PROJECT_DIR$/verticalviewpager/verticalviewpager.iml" />
-      <module fileurl="file://$PROJECT_DIR$/verticalviewpager/verticalviewpager.iml" filepath="$PROJECT_DIR$/verticalviewpager/verticalviewpager.iml" />
-      <module fileurl="file://$PROJECT_DIR$/volley/volley.iml" filepath="$PROJECT_DIR$/volley/volley.iml" />
       <module fileurl="file://$PROJECT_DIR$/volley/volley.iml" filepath="$PROJECT_DIR$/volley/volley.iml" />
       <module fileurl="file://$PROJECT_DIR$/volleydemo/volleydemo.iml" filepath="$PROJECT_DIR$/volleydemo/volleydemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/widgetapp/widgetapp.iml" filepath="$PROJECT_DIR$/widgetapp/widgetapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/widgetapp/widgetapp.iml" filepath="$PROJECT_DIR$/widgetapp/widgetapp.iml" />
     </modules>
   </component>
