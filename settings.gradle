@@ -2,4 +2,4 @@ include ':app', ':lifecyledemo', ':volleydemo', ':CommonLibrary',
         ':edittextdemo', ':StorageDemo', ':okhttpdemo', ':widgetapp',
         ':annotationdemo', ':servicedemo', ':keyborad', ':rxjavademo',
         ':broadcastreceiver', ':modulecollections', ':dialog_activity',
-        ':permissiondemo', ':verticalviewpager', ':volley'
+        ':permissiondemo', ':verticalviewpager'
