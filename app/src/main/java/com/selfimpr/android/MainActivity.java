@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.selfimpr.StringUtil;
+import com.selfimpr.android.viewpager.ViewPagerActivity;
 
 import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         List<String> array = StringUtil.split("入手渠道|转手原因|规格尺寸|新旧程度|使用感受", "\\|");
         Log.e("wjc", String.valueOf(array));
 
+        startActivity(new Intent(this, ViewPagerActivity.class));
     }
 
     private void testSparseArray() {
