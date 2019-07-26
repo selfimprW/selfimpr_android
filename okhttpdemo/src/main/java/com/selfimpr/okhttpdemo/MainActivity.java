@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         client = new OkHttpClient.Builder()
+                .addInterceptor(new LoggingInterceptor())
+                .addNetworkInterceptor(new LoggingInterceptor())
                 .readTimeout(5, TimeUnit.SECONDS)
                 .cache(new Cache(getApplication().getCacheDir(), 24 * 1024 * 1024)).build();
 
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void asyRequest() {
         Request request = new Request.Builder()
-                .url("http://square.github.io/okhttp/")
+                .url("https://api.apiopen.top/getJoke?page=1&count=2&type=video")
                 .get()
                 .build();
 
@@ -58,13 +60,12 @@ public class MainActivity extends AppCompatActivity {
             //todo 回调调用是在子线程执行
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.e("wjc", call.toString());
-
+                Log.e("wjc", "asyRequest#onFailure-->" + e.toString() + call.toString());
             }
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                Log.e("wjc", response.body().string());
+//                Log.e("wjc", "asyRequest#onResponse-->" + response.body().string());
             }
         });
     }
@@ -77,9 +78,10 @@ public class MainActivity extends AppCompatActivity {
      */
     private void synRequest() throws IOException {
         Request request = new Request.Builder()
-                .url("http://square.github.io/okhttp/")
+                .url("https://api.apiopen.top/getJoke?page=1&count=2&type=video")
                 .build();
         Response response = client.newCall(request).execute();
-        Log.e("wjc", "syn--->" + response.body().string());
+//        Log.e("wjc", "synRequest2--->" + response.body().string());
+//        Log.e("wjc", "synRequest1--->" + new String(response.body().bytes()));
     }
 }
