@@ -2,6 +2,8 @@ package com.selfimpr.android;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.util.SparseArray;
@@ -39,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
         Log.e("wjc", String.valueOf(array));
 
         startActivity(new Intent(this, ViewPagerActivity.class));
+
+
+        ExecutorDeliver deliver = new ExecutorDeliver(new Handler(Looper.getMainLooper()));
+        deliver.post();
     }
 
     private void testSparseArray() {
