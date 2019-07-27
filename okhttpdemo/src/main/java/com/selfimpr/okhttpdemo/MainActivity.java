@@ -1,9 +1,12 @@
 package com.selfimpr.okhttpdemo;
 
+import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -32,25 +35,14 @@ public class MainActivity extends AppCompatActivity {
                 .addNetworkInterceptor(new LoggingInterceptor())
                 .readTimeout(5, TimeUnit.SECONDS)
                 .cache(new Cache(getApplication().getCacheDir(), 24 * 1024 * 1024)).build();
-
-        asyRequest();
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    synRequest();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
     }
 
     /**
      * 异步请求
+     *
+     * @param view
      */
-    private void asyRequest() {
+    public void asyncRequest(View view) {
         Request request = new Request.Builder()
                 .url("https://api.apiopen.top/getJoke?page=1&count=2&type=video")
                 .get()
@@ -70,18 +62,31 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
     /**
      * 同步请求
      * 主线程直接调用会有异常：android.os.NetworkOnMainThreadException
      *
      * @throws IOException
      */
-    private void synRequest() throws IOException {
-        Request request = new Request.Builder()
-                .url("https://api.apiopen.top/getJoke?page=1&count=2&type=video")
-                .build();
-        Response response = client.newCall(request).execute();
+    public void syncRequest(View view) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Request request = new Request.Builder()
+                            .url("https://api.apiopen.top/getJoke?page=1&count=2&type=video")
+                            .build();
+                    Response response = client.newCall(request).execute();
+                    Looper.prepare();
+                    Toast.makeText(MainActivity.this, response.body().string(), Toast.LENGTH_SHORT).show();
+                    Looper.loop();
 //        Log.e("wjc", "synRequest2--->" + response.body().string());
 //        Log.e("wjc", "synRequest1--->" + new String(response.body().bytes()));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 }
