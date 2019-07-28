@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         List<String> array = StringUtil.split("入手渠道|转手原因|规格尺寸|新旧程度|使用感受", "\\|");
         Log.e("wjc", String.valueOf(array));
 
-        startActivity(new Intent(this, ViewPagerActivity.class));
+        startActivity(new Intent(this, RecyclerViewActivity.class));
 
 
         ExecutorDeliver deliver = new ExecutorDeliver(new Handler(Looper.getMainLooper()));

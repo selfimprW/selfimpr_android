@@ -32,6 +32,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".viewpager.ViewPagerActivity" />
+        <activity android:name=".RecyclerViewActivity" />
     </application>
 
 </manifest>
