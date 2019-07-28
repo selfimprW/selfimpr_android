@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -23,18 +24,23 @@ import okhttp3.Response;
  */
 public class MainActivity extends AppCompatActivity {
 
-    OkHttpClient client;
+    private OkHttpClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        final File cacheDir = new File(getApplication().getCacheDir(), "HttpResponseCache");
+        final int HTTP_RESPONSE_DISK_CACHE_MAX_SIZE = 10 * 1024 * 1024;
         client = new OkHttpClient.Builder()
                 .addInterceptor(new LoggingInterceptor())
                 .addNetworkInterceptor(new LoggingInterceptor())
-                .readTimeout(5, TimeUnit.SECONDS)
-                .cache(new Cache(getApplication().getCacheDir(), 24 * 1024 * 1024)).build();
+                .readTimeout(20, TimeUnit.SECONDS) // 读数据超时
+                .writeTimeout(20, TimeUnit.SECONDS) // 写数据超时
+                .connectTimeout(15, TimeUnit.SECONDS) // 连接超时
+                .cache(new Cache(cacheDir, HTTP_RESPONSE_DISK_CACHE_MAX_SIZE)).build();
     }
 
     /**
