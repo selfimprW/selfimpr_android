@@ -1,10 +1,14 @@
 package com.selfimpr.okhttpdemo;
 
+import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -20,37 +24,33 @@ import okhttp3.Response;
  */
 public class MainActivity extends AppCompatActivity {
 
-    OkHttpClient client;
+    private OkHttpClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        final File cacheDir = new File(getApplication().getCacheDir(), "HttpResponseCache");
+        final int HTTP_RESPONSE_DISK_CACHE_MAX_SIZE = 10 * 1024 * 1024;
         client = new OkHttpClient.Builder()
-                .readTimeout(5, TimeUnit.SECONDS)
-                .cache(new Cache(getApplication().getCacheDir(), 24 * 1024 * 1024)).build();
-
-        asyRequest();
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    synRequest();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
+                .addInterceptor(new LoggingInterceptor())
+                .addNetworkInterceptor(new LoggingInterceptor())
+                .readTimeout(20, TimeUnit.SECONDS) // 读数据超时
+                .writeTimeout(20, TimeUnit.SECONDS) // 写数据超时
+                .connectTimeout(15, TimeUnit.SECONDS) // 连接超时
+                .cache(new Cache(cacheDir, HTTP_RESPONSE_DISK_CACHE_MAX_SIZE)).build();
     }
 
     /**
      * 异步请求
+     *
+     * @param view
      */
-    private void asyRequest() {
+    public void asyncRequest(View view) {
         Request request = new Request.Builder()
-                .url("http://square.github.io/okhttp/")
+                .url("https://api.apiopen.top/getJoke?page=1&count=2&type=video")
                 .get()
                 .build();
 
@@ -58,16 +58,16 @@ public class MainActivity extends AppCompatActivity {
             //todo 回调调用是在子线程执行
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.e("wjc", call.toString());
-
+                Log.e("wjc", "asyRequest#onFailure-->" + e.toString() + call.toString());
             }
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                Log.e("wjc", response.body().string());
+//                Log.e("wjc", "asyRequest#onResponse-->" + response.body().string());
             }
         });
     }
+
 
     /**
      * 同步请求
@@ -75,11 +75,24 @@ public class MainActivity extends AppCompatActivity {
      *
      * @throws IOException
      */
-    private void synRequest() throws IOException {
-        Request request = new Request.Builder()
-                .url("http://square.github.io/okhttp/")
-                .build();
-        Response response = client.newCall(request).execute();
-        Log.e("wjc", "syn--->" + response.body().string());
+    public void syncRequest(View view) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Request request = new Request.Builder()
+                            .url("https://api.apiopen.top/getJoke?page=1&count=2&type=video")
+                            .build();
+                    Response response = client.newCall(request).execute();
+                    Looper.prepare();
+                    Toast.makeText(MainActivity.this, response.body().string(), Toast.LENGTH_SHORT).show();
+                    Looper.loop();
+//        Log.e("wjc", "synRequest2--->" + response.body().string());
+//        Log.e("wjc", "synRequest1--->" + new String(response.body().bytes()));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 }
