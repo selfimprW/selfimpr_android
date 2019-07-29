@@ -1,6 +1,7 @@
 package com.selfimpr.okhttpdemo;
 
 import android.os.Looper;
+import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 .writeTimeout(20, TimeUnit.SECONDS) // 写数据超时
                 .connectTimeout(15, TimeUnit.SECONDS) // 连接超时
                 .cache(new Cache(cacheDir, HTTP_RESPONSE_DISK_CACHE_MAX_SIZE)).build();
+
     }
 
     /**

@@ -1,4 +1,4 @@
-include ':app', ':lifecyledemo', ':volleydemo', ':CommonLibrary', ':collections',
+include ':app', ':lifecyledemo', ':volleydemo', ':CommonLibrary', ':collections', ':leakcanarydemo',
         ':edittextdemo', ':StorageDemo', ':okhttpdemo', ':widgetapp',
         ':annotationdemo', ':servicedemo', ':keyborad', ':rxjavademo',
         ':broadcastreceiver', ':modulecollections', ':dialog_activity',
