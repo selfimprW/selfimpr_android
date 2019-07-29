@@ -5,7 +5,8 @@ import android.app.Application;
 import com.squareup.leakcanary.LeakCanary;
 
 /**
- * description：https://github.com/square/leakcanary/tree/v1.6.3   <br/>
+ * description：https://github.com/square/leakcanary/tree/v1.6.3
+ * https://github.com/android-cn/android-discuss/issues/254<br/>
  * ===============================<br/>
  * creator：Jiacheng<br/>
  * create time：2019-07-29 21:23<br/>
