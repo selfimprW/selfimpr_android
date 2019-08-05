@@ -34,9 +34,9 @@
         <activity android:name=".viewpager.ViewPagerActivity" />
         <activity android:name=".RecyclerViewActivity" />
 
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.selfimpr.android" />
+        <!--<provider-->
+            <!--android:name="android.support.v4.content.FileProvider"-->
+            <!--android:authorities="com.selfimpr.android" />-->
     </application>
 
 </manifest>

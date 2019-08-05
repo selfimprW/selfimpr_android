@@ -16,8 +16,11 @@ import com.selfimpr.android.viewpager.ViewPagerActivity;
 import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;
 import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.FutureTask;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,21 +33,46 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         content = findViewById(R.id.content);
 
-        ModuleStaticConfig.getInstance().put("runnable", new AsyncTaskRunnable("w"));
-        ModuleStaticConfig.getInstance().put("wjc", "wjc");
-
-        Log.e("wjc", ModuleStaticConfig.getInstance().get("wjc").toString());
-
         testSparseArray();
 
         List<String> array = StringUtil.split("入手渠道|转手原因|规格尺寸|新旧程度|使用感受", "\\|");
         Log.e("wjc", String.valueOf(array));
 
-        startActivity(new Intent(this, RecyclerViewActivity.class));
-
+//        startActivity(new Intent(this, RecyclerViewActivity.class));
 
         ExecutorDeliver deliver = new ExecutorDeliver(new Handler(Looper.getMainLooper()));
         deliver.post();
+
+        try {
+            long start = System.currentTimeMillis();
+            createCallable();
+            Log.e("wjc", "createCallable = " + (System.currentTimeMillis() - start));
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void createCallable() throws ExecutionException, InterruptedException {
+        MyCallable callable = new MyCallable();
+        FutureTask<String> futureTask = new FutureTask<>(callable);
+        Thread thread = new Thread(futureTask);
+        thread.start();
+        Log.e("wjc", futureTask.get() + "");
+    }
+
+    class MyCallable implements Callable<String> {
+
+        /**
+         * 如果此时异步任务还没完成会阻塞当前进程直到返回结果。
+         *
+         */
+        @Override
+        public String call() throws Exception {
+            Thread.sleep(2000);
+            return "callable return";
+        }
     }
 
     private void testSparseArray() {
